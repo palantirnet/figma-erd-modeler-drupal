@@ -1,0 +1,43 @@
+<div id="ui" class="ui">
+
+  <div class="ui-item-checkbox">
+    <input type="checkbox" id="ribbon" onclick="sendAction('ribbon')" name="ribbon">
+    <label for="ribbon">Ribbon</label>
+  </div>
+  <div class="ui-item-checkbox">
+    <input type="checkbox" id="description" onclick="sendAction('description')" name="description">
+    <label for="description">Description</label>
+  </div>
+  <div class="ui-item-checkbox">
+    <input type="checkbox" id="link" onclick="sendAction('link')" name="link">
+    <label for="link">Link</label>
+  </div>
+
+</div>
+
+<script>
+
+  const id = { pluginId: '1222719888307415437' }
+  const url = 'https://www.figma.com'
+  const view = "settings"
+
+  onmessage = (event) => {
+    if (event.data.pluginMessage.data) {
+      document.getElementById('ui').style.display = "flex";
+
+      document.getElementById('ribbon').checked = event.data.pluginMessage.data.isRibbonVisible;
+      document.getElementById('description').checked = event.data.pluginMessage.data.isDescriptionVisible;
+      document.getElementById('link').checked = event.data.pluginMessage.data.isLinkVisible;
+    }
+  }
+
+  function sendAction(action) {
+    parent.postMessage({
+      pluginMessage: {
+        view,
+        action: action
+      }, ...id
+    }, url)
+  }
+
+</script>

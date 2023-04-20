@@ -10,5 +10,8 @@
     "figjam"
   ],
   "containsWidget": true,
-  "widgetApi": "1.0.0"
+  "widgetApi": "1.0.0",
+  "ui": {
+    "settings": "dist/ui_settings.html"
+  }
 }
