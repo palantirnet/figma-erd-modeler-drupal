@@ -28,6 +28,30 @@ const {
 } = widget;
 
 import { EntryPresets, FieldTypePresets } from "./config";
+import * as drupal from "../data/figma.json";
+const first_element_data = {
+  colorTheme: "light",
+  preset: "header",
+  title: drupal.content_types[0].label,
+  description: drupal.content_types[0].name,
+  colorRibbon: tokens.themes.status.dark.light.fill,
+  isDescriptionVisible: true,
+  isRibbonVisible: true,
+  isLinkVisible: true,
+  link: {
+    src: "http://www.google.com",
+    valid: true,
+  },
+  name: "name",
+  field_type: Object.keys(FieldTypePresets)[0],
+  field_settings: "field settings",
+  required: false,
+  colorType: tokens.themes.status.success.light.fill,
+  cardinality: "",
+  help_text: "",
+
+  width: 960,
+};
 
 /* Components */
 import Header from "./patterns/Header";
@@ -605,7 +629,8 @@ function Widget() {
     const siblings = parentNode.children
       .filter(
         (i: any) =>
-          i.name === "Drupal: Content Model ERD" && i.getPluginData("stackID") === id
+          i.name === "Drupal: Content Model ERD" &&
+          i.getPluginData("stackID") === id
       )
       .sort((a: any, b: any) => b.y - a.y);
 
@@ -822,11 +847,12 @@ function Widget() {
       stroke={tokens.themes.border.container[data.colorTheme].fill}
       strokeWidth={1}
     >
-      {data.preset === Object.keys(EntryPresets)[0] ? (
+      {renderHeader(first_element_data, tableConfig)}
+      {/* {data.preset === Object.keys(EntryPresets)[0] ? (
         renderHeader(data, tableConfig)
       ) : (
         <></>
-      )}
+      )} */}
       {data.preset === Object.keys(EntryPresets)[1] ? (
         renderEntry(data, tableConfig)
       ) : (
