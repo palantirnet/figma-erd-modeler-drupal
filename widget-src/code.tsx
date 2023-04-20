@@ -605,7 +605,7 @@ function Widget() {
     const siblings = parentNode.children
       .filter(
         (i: any) =>
-          i.name === "ERD Modeler" && i.getPluginData("stackID") === id
+          i.name === "Drupal: Content Model ERD" && i.getPluginData("stackID") === id
       )
       .sort((a: any, b: any) => b.y - a.y);
 
@@ -620,12 +620,6 @@ function Widget() {
       ) {
         maxBottomPosition =
           siblings[i + 1].y + siblings[i + 1].height + spacing;
-        console.log("BREAK", {
-          curr: siblings[i].y,
-          next: siblings[i + 1].y,
-          node: newNode.height,
-          spacing: spacing * 2,
-        });
         break;
       } else {
         maxBottomPosition = siblings[0].y + siblings[0].height + spacing;
