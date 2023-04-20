@@ -9,7 +9,6 @@ declare global {
     [t: string]: {
       label: string,
       description: string,
-      types: Array<string>,
     }
   }
 }
