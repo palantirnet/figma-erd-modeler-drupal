@@ -59,12 +59,12 @@ function Widget() {
       valid: false,
     },
 
-    field_type: Object.keys(FieldTypePresets)[0],
     name: "name",
-    field_details: "type details",
+    field_type: Object.keys(FieldTypePresets)[0],
+    field_settings: "field settings",
     required: false,
     colorType: tokens.themes.status.success.light.fill,
-    defaultValue: "",
+    cardinality: "",
     help_text: "",
 
     width: 960,
@@ -92,13 +92,13 @@ function Widget() {
       },
     },
     {
-      title: "Field Details",
+      title: "Field Settings",
       width: 120,
       disabled: false,
       style: {
         fontSize: (tokens.themes.typo.p5.fontSize as number) - 1,
         fontFamily: "Spline Sans Mono",
-        tooltip: "Field Details",
+        tooltip: "Field Settings",
       },
     },
     {
@@ -112,10 +112,10 @@ function Widget() {
       },
     },
     {
-      title: "Default value",
+      title: "Cardinality",
       disabled: false,
-      width: 160,
-      style: { tooltip: "Default value" },
+      width: 80,
+      style: { tooltip: "Cardinality" },
     },
     {
       title: "Help Text",
@@ -544,10 +544,10 @@ function Widget() {
 
         name: "name",
         field_type: Object.keys(FieldTypePresets)[0],
-        field_details: "field details",
+        field_settings: "field settings",
         required: false,
         colorType: tokens.themes.status.success.light.fill,
-        defaultValue: "",
+        cardinality: "",
         help_text: "",
 
         // width: 800
@@ -692,13 +692,13 @@ function Widget() {
     if (index === 2) {
       setData({
         ...data,
-        field_details: content,
+        field_settings: content,
       });
     }
     if (index === 4) {
       setData({
         ...data,
-        defaultValue: content,
+        cardinality: content,
       });
     }
     if (index === 5) {
@@ -777,7 +777,7 @@ function Widget() {
             },
             {
               ...config[2],
-              content: current.field_details,
+              content: current.field_settings,
               style: {
                 ...config[2].style,
                 fill: current.colorType,
@@ -793,7 +793,7 @@ function Widget() {
             },
             {
               ...config[4],
-              content: current.defaultValue,
+              content: current.cardinality,
               style: {
                 ...config[4].style,
               },
