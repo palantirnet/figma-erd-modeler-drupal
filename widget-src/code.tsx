@@ -882,12 +882,11 @@ function Widget() {
       stroke={tokens.themes.border.container[data.colorTheme].fill}
       strokeWidth={1}
     >
-      {renderHeader(first_element_data, tableConfig)}
-      {/* {data.preset === Object.keys(EntryPresets)[0] ? (
+      {data.preset === Object.keys(EntryPresets)[0] ? (
         renderHeader(data, tableConfig)
       ) : (
         <></>
-      )} */}
+      )}
       {data.preset === Object.keys(EntryPresets)[1] ? (
         renderEntry(data, tableConfig)
       ) : (
