@@ -643,7 +643,8 @@ function Widget() {
       .filter(
         (i: any) =>
           i.name === "Drupal: Content Model ERD" &&
-          i.getPluginData("stackID") === id
+          i.getPluginData("stackID") === id &&
+          i.widgetSyncedState.data.preset === "entry"
       )
       .sort((a: any, b: any) => b.y - a.y);
 
@@ -677,28 +678,18 @@ function Widget() {
       id: string,
       spacing: number
   ) => {
-    if (parentNode.children && parentNode.children.length > 0) {
       const siblings = parentNode.children
           .filter(
               (i: any) =>
-                  i.name === "Drupal: Content Model ERD" && i.getPluginData("stackID") === id
+                  i.name === "Drupal: Content Model ERD" &&
+                  i.getPluginData("stackID") === id &&
+                  i.widgetSyncedState.data.preset === "header"
           );
-
-      for (let i = 0; i < siblings.length - 1; i++) {
-        console.log(siblings[i].getPluginData('stackID'));
-        console.log(siblings[i].getPluginData('localWidgetCodeMD5'));
-      }
 
       return {
         x: selectedNode.x + ((selectedNode.width + spacing) * (siblings.length - 1)),
         y: selectedNode.y,
       };
-    }
-
-    return {
-      x: selectedNode.x + (selectedNode.width + spacing),
-      y: selectedNode.y,
-    }
   };
 
   const insertNewNode = (
