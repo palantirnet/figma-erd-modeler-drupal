@@ -5,6 +5,7 @@ declare global {
     title: string
     isDescriptionVisible: boolean
     description: string
+    machine_name: string
     suffix?: FigmaDeclarativeNode
     disabled?: boolean
     link?: Link

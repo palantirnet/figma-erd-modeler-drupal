@@ -52,6 +52,15 @@ function Header(props: IHeaderProps) {
               onEditEnd={(e: TextEditEvent) => props.onEditEnd({ property: 'description', value: e })}
             />
           )}
+          <InputGhost
+            theme={props.theme}
+            variant={{ typo: "p5", txt: "secondary" }}
+            content={props.machine_name}
+            placeholder="machine_name"
+            onEditEnd={(e: TextEditEvent) =>
+              props.onEditEnd({ property: "machine_name", value: e })
+            }
+          />
           <>
             {props.link && (
               <LinkBox

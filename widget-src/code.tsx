@@ -59,6 +59,7 @@ function Widget() {
       src: "",
       valid: false,
     },
+    machine_name: "machine_name",
 
     name: "name",
     field_type: Object.keys(FieldTypePresets)[0],
@@ -125,6 +126,17 @@ function Widget() {
       style: {
         fill: tokens.themes.txt.secondary.default[data.colorTheme].color,
         tooltip: "Help Text",
+      },
+    },
+    {
+      title: "Machine Name",
+      width: "fill-parent",
+      disabled: false,
+      style: {
+        fill: tokens.themes.txt.secondary.default[data.colorTheme].color,
+        fontSize: (tokens.themes.typo.p5.fontSize as number) - 1,
+        fontFamily: "Spline Sans Mono",
+        tooltip: "Machine Name",
       },
     },
   ]);
@@ -350,7 +362,7 @@ function Widget() {
         setData({
           ...data,
           title: drupal.content_types[0].label,
-          description: drupal.content_types[0].name,
+          machine_name: drupal.content_types[0].name,
           isDescriptionVisible: true,
           colorRibbon: "#00B6F0",
         });
@@ -564,7 +576,7 @@ function Widget() {
           src: "",
           valid: false,
         },
-
+        machine_name: "machine_name",
         name: "name",
         field_type: Object.keys(FieldTypePresets)[0],
         field_settings: "field settings",
@@ -767,6 +779,7 @@ function Widget() {
         isTitleVisible={true}
         isDescriptionVisible={current.isDescriptionVisible}
         description={current.description}
+        machine_name={current.machine_name}
         disabled={false}
         link={current.isLinkVisible ? current.link : undefined}
         onEditEnd={(e: IItemHeaderOnEditEndEvent) =>
@@ -842,6 +855,13 @@ function Widget() {
               content: current.help_text,
               style: {
                 ...config[5].style,
+              },
+            },
+            {
+              ...config[6],
+              content: current.machine_name,
+              style: {
+                ...config[6].style,
               },
             },
           ] as TableCell[]
