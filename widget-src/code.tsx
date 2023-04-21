@@ -644,30 +644,16 @@ function Widget() {
         (i: any) =>
           i.name === "Drupal: Content Model ERD" &&
           i.getPluginData("stackID") === id &&
-          i.widgetSyncedState.data.preset === "entry"
+          i.widgetSyncedState.data.preset === "entry" &&
+          i.x === selectedNode.x
       )
       .sort((a: any, b: any) => b.y - a.y);
 
-    let maxBottomPosition;
-
-    for (let i = 0; i < siblings.length - 1; i++) {
-      if (
-        siblings[i].y -
-          (siblings[i + 1].y + siblings[i + 1].height) -
-          spacing * 2 >=
-        newNode.height
-      ) {
-        maxBottomPosition =
-          siblings[i + 1].y + siblings[i + 1].height + spacing;
-        break;
-      } else {
-        maxBottomPosition = siblings[0].y + siblings[0].height + spacing;
-      }
-    }
-
+    // I cannot for the life of me find the 78px height of "Entry" items in
+    // any of the properties of the widget. I'm hard-coding it for now.
     return {
       x: selectedNode.x,
-      y: maxBottomPosition,
+      y: (selectedNode.y + selectedNode.height + spacing) + ((78 + spacing) * (siblings.length - 1))
     };
   };
 
