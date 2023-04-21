@@ -524,7 +524,7 @@ function Widget() {
 
     let id = getCurrentStackID(selectedNode, newNode);
 
-    const newNodePosition = calculateNewNodePosition(
+    const newNodePosition = calculateNewAttributeNodePosition(
       selectedNode,
       newNode as any,
       parentNode,
@@ -542,10 +542,10 @@ function Widget() {
   const addEntry = (current: typeof data, type: string) => {
     const selectedNode = figma.currentPage.selection[0] as WidgetNode;
     const parentNode = selectedNode.parent as
-      | PageNode
-      | FrameNode
-      | SectionNode
-      | GroupNode;
+        | PageNode
+        | FrameNode
+        | SectionNode
+        | GroupNode;
 
     const newNode = selectedNode.cloneWidget({
       ...selectedNode.widgetSyncedState,
@@ -619,7 +619,7 @@ function Widget() {
     return id;
   };
 
-  const calculateNewNodePosition = (
+  const calculateNewAttributeNodePosition = (
     selectedNode: WidgetNode,
     newNode: WidgetNode,
     parentNode: any,
@@ -655,6 +655,37 @@ function Widget() {
       x: selectedNode.x,
       y: maxBottomPosition,
     };
+  };
+
+  const calculateNewHeaderNodePosition = (
+      selectedNode: WidgetNode,
+      newNode: WidgetNode,
+      parentNode: any,
+      id: string,
+      spacing: number
+  ) => {
+    if (parentNode.children && parentNode.children.length > 0) {
+      const siblings = parentNode.children
+          .filter(
+              (i: any) =>
+                  i.name === "Drupal: Content Model ERD" && i.getPluginData("stackID") === id
+          );
+
+      for (let i = 0; i < siblings.length - 1; i++) {
+        console.log(siblings[i].getPluginData('stackID'));
+        console.log(siblings[i].getPluginData('localWidgetCodeMD5'));
+      }
+
+      return {
+        x: selectedNode.x + ((selectedNode.width + spacing) * (siblings.length - 1)),
+        y: selectedNode.y,
+      };
+    }
+
+    return {
+      x: selectedNode.x + (selectedNode.width + spacing),
+      y: selectedNode.y,
+    }
   };
 
   const insertNewNode = (
