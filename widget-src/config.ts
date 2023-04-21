@@ -12,6 +12,10 @@ export const FieldTypePresets: TableModelerFieldTypePresetsMapping = {
     label: 'No Type',
     description: '',
   },
+  address: {
+    label:'Address',
+    description: 'An entity field containing an address.',
+  },
   boolean: {
     label:'Boolean',
     description: 'An entity field containing a boolean value.',
@@ -19,6 +23,14 @@ export const FieldTypePresets: TableModelerFieldTypePresetsMapping = {
   comments: {
     label: 'Comments',
     description: 'This field manages configuration and presentation of comments on an entity.',
+  },
+  changed: {
+    label: 'Date Changed',
+    description: '',
+  },
+  created: {
+    label: 'Date Created',
+    description: '',
   },
   datetime: {
     label: 'Date',
@@ -44,7 +56,6 @@ export const FieldTypePresets: TableModelerFieldTypePresetsMapping = {
     label: 'File',
     description: 'This field stores the ID of a file as an integer value.',
   },
-
   float: {
     label: 'Number (float)',
     description: 'This field stores a number in the database in a floating point format.',
@@ -77,6 +88,10 @@ export const FieldTypePresets: TableModelerFieldTypePresetsMapping = {
     label: 'List (text)',
     description: 'This field stores text values from a list of allowed "value => label" pairs, i.e. "US States": IL => Illinois, IA => Iowa, IN => Indiana.',
   },
+  path: {
+    label: 'Path',
+    description: '',
+  },
   string: {
     label: 'Text (plain)',
     description: 'A field containing a plain string value.',
@@ -104,5 +119,9 @@ export const FieldTypePresets: TableModelerFieldTypePresetsMapping = {
   timestamp: {
     label: 'Timestamp',
     description: 'An entity field containing a UNIX timestamp value.',
+  },
+  uuid: {
+    label: 'UUID',
+    description: 'A universally unique identifier.',
   }
 }
