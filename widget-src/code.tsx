@@ -363,8 +363,25 @@ function Widget() {
           ...data,
           title: drupal.content_types[0].label,
           machine_name: drupal.content_types[0].name,
-          isDescriptionVisible: true,
           colorRibbon: "#00B6F0",
+        });
+        drupal.content_types[0].fields.forEach((field: any) => {
+          addEntry(
+            {
+              ...data,
+              preset: "entry",
+              machine_name: field.name,
+              name: field.label,
+              field_type: field.field_type,
+              field_settings: field.hasOwnProperty("settings")
+                ? JSON.stringify(field.settings)
+                : "",
+              required: field.is_required,
+              cardinality: String(field.cardinality),
+              help_text: field.description,
+            },
+            "entry"
+          );
         });
       }
 
@@ -553,41 +570,17 @@ function Widget() {
   const addEntry = (current: typeof data, type: string) => {
     const selectedNode = figma.currentPage.selection[0] as WidgetNode;
     const parentNode = selectedNode.parent as
-        | PageNode
-        | FrameNode
-        | SectionNode
-        | GroupNode;
-
+      | PageNode
+      | FrameNode
+      | SectionNode
+      | GroupNode;
     const newNode = selectedNode.cloneWidget({
       ...selectedNode.widgetSyncedState,
       data: {
         ...selectedNode.widgetSyncedState.data,
-        isUIopen: false,
-        // colorTheme: 'light',
-        preset: type,
-
-        title: "Entity name",
-        description: "",
-        colorRibbon: tokens.themes.status.dark.light.fill,
-        isDescriptionVisible: false,
-        isRibbonVisible: true,
-        isLinkVisible: false,
-        link: {
-          src: "",
-          valid: false,
-        },
-        machine_name: "machine_name",
-        name: "name",
-        field_type: Object.keys(FieldTypePresets)[0],
-        field_settings: "field settings",
-        required: false,
-        colorType: tokens.themes.status.success.light.fill,
-        cardinality: "",
-        help_text: "",
-
-        // width: 800
+        ...current,
       },
-      entryType: Object.keys(EntryPresets)[1],
+      entryType: type,
     });
 
     let id = getCurrentStackID(selectedNode, newNode);
@@ -595,20 +588,20 @@ function Widget() {
     let newNodePosition;
     if (type === "header") {
       newNodePosition = calculateNewHeaderNodePosition(
-          selectedNode,
-          newNode,
-          parentNode,
-          id,
-          100
+        selectedNode,
+        newNode,
+        parentNode,
+        id,
+        100
       );
     }
     if (type === "entry") {
       newNodePosition = calculateNewAttributeNodePosition(
-          selectedNode,
-          newNode,
-          parentNode,
-          id,
-          8
+        selectedNode,
+        newNode,
+        parentNode,
+        id,
+        8
       );
     }
 
@@ -655,38 +648,46 @@ function Widget() {
         (i: any) =>
           i.name === "Drupal: Content Model ERD" &&
           i.getPluginData("stackID") === id &&
-          i.widgetSyncedState.data.preset === "entry" &&
+          i.widgetSyncedState.entryType === "entry" &&
           i.x === selectedNode.x
       )
       .sort((a: any, b: any) => b.y - a.y);
+
+    console.log("siblings", siblings);
+    let totalHeight = selectedNode.y + spacing;
+    siblings.forEach((sibling: any) => {
+      console.log("sibling height", sibling.height);
+      totalHeight += sibling.height + spacing;
+    });
+    console.log("total height", totalHeight);
 
     // I cannot for the life of me find the 78px height of "Entry" items in
     // any of the properties of the widget. I'm hard-coding it for now.
     return {
       x: selectedNode.x,
-      y: (selectedNode.y + selectedNode.height + spacing) + ((78 + spacing) * (siblings.length - 1))
+      y: totalHeight,
     };
   };
 
   const calculateNewHeaderNodePosition = (
-      selectedNode: WidgetNode,
-      newNode: WidgetNode,
-      parentNode: any,
-      id: string,
-      spacing: number
+    selectedNode: WidgetNode,
+    newNode: WidgetNode,
+    parentNode: any,
+    id: string,
+    spacing: number
   ) => {
-      const siblings = parentNode.children
-          .filter(
-              (i: any) =>
-                  i.name === "Drupal: Content Model ERD" &&
-                  i.getPluginData("stackID") === id &&
-                  i.widgetSyncedState.data.preset === "header"
-          );
+    const siblings = parentNode.children.filter(
+      (i: any) =>
+        i.name === "Drupal: Content Model ERD" &&
+        i.getPluginData("stackID") === id &&
+        i.widgetSyncedState.data.preset === "header"
+    );
 
-      return {
-        x: selectedNode.x + ((selectedNode.width + spacing) * (siblings.length - 1)),
-        y: selectedNode.y,
-      };
+    return {
+      x:
+        selectedNode.x + (selectedNode.width + spacing) * (siblings.length - 1),
+      y: selectedNode.y,
+    };
   };
 
   const insertNewNode = (
@@ -824,7 +825,9 @@ function Widget() {
               content: current.field_type === "none" ? "" : current.field_type,
               style: {
                 ...config[1].style,
-                tooltip: FieldTypePresets[current.field_type].label,
+                tooltip: FieldTypePresets.hasOwnProperty(current.field_type)
+                  ? FieldTypePresets[current.field_type].label
+                  : "Other",
               },
             },
             {
