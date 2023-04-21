@@ -581,13 +581,26 @@ function Widget() {
 
     let id = getCurrentStackID(selectedNode, newNode);
 
-    const newNodePosition = calculateNewNodePosition(
-      selectedNode,
-      newNode,
-      parentNode,
-      id,
-      8
-    );
+    let newNodePosition;
+    if (type === "header") {
+      newNodePosition = calculateNewHeaderNodePosition(
+          selectedNode,
+          newNode,
+          parentNode,
+          id,
+          100
+      );
+    }
+    if (type === "entry") {
+      newNodePosition = calculateNewAttributeNodePosition(
+          selectedNode,
+          newNode,
+          parentNode,
+          id,
+          8
+      );
+    }
+
     insertNewNode(
       newNode,
       newNodePosition,
