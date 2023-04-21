@@ -29,29 +29,6 @@ const {
 
 import { EntryPresets, FieldTypePresets } from "./config";
 import * as drupal from "../data/figma.json";
-const first_element_data = {
-  colorTheme: "light",
-  preset: "header",
-  title: drupal.content_types[0].label,
-  description: drupal.content_types[0].name,
-  colorRibbon: tokens.themes.status.dark.light.fill,
-  isDescriptionVisible: true,
-  isRibbonVisible: true,
-  isLinkVisible: true,
-  link: {
-    src: "http://www.google.com",
-    valid: true,
-  },
-  name: "name",
-  field_type: Object.keys(FieldTypePresets)[0],
-  field_settings: "field settings",
-  required: false,
-  colorType: tokens.themes.status.success.light.fill,
-  cardinality: "",
-  help_text: "",
-
-  width: 960,
-};
 
 /* Components */
 import Header from "./patterns/Header";
@@ -154,6 +131,18 @@ function Widget() {
 
   usePropertyMenu(
     [
+      ...(data.preset === Object.keys(EntryPresets)[0]
+        ? ([
+            {
+              itemType: "action",
+              tooltip: "Populate",
+              propertyName: "populate",
+              icon: glyphs.info(
+                tokens.themes.txt.minor.default.light.color as string
+              ),
+            },
+          ] as WidgetPropertyMenuItem[])
+        : []),
       ...(data.preset === Object.keys(EntryPresets)[0]
         ? ([
             {
@@ -357,6 +346,16 @@ function Widget() {
       },
     ],
     ({ propertyName, propertyValue }) => {
+      if (propertyName === "populate") {
+        setData({
+          ...data,
+          title: drupal.content_types[0].label,
+          description: drupal.content_types[0].name,
+          isDescriptionVisible: true,
+          colorRibbon: "#00B6F0",
+        });
+      }
+
       if (propertyName === "openSettings") {
         return new Promise((resolve) => {
           openUI("settings", { data });
