@@ -1,1 +1,1217 @@
-{"content_types":[{"name":"adrc_asset","label":"Services and Forms","fields":[{"name":"nid","label":"ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"uuid","label":"UUID","description":null,"field_type":"uuid","is_required":false,"cardinality":1,"default_value":[]},{"name":"vid","label":"Revision ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"langcode","label":"Language","description":null,"field_type":"language","is_required":false,"cardinality":1,"default_value":[]},{"name":"type","label":"Content type","description":null,"field_type":"entity_reference","is_required":true,"cardinality":1,"default_value":[],"settings":{"target_type":"node_type"}},{"name":"revision_timestamp","label":"Revision create time","description":"The time that the current revision was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"revision_uid","label":"Revision user","description":"The user ID of the author of the current revision.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"revision_log","label":"Revision log message","description":"Briefly describe the changes you have made.","field_type":"string_long","is_required":false,"cardinality":1,"default_value":[{"value":""}]},{"name":"status","label":"Published","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"uid","label":"Authored by","description":"The username of the content author.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"title","label":"Title","description":null,"field_type":"string","is_required":true,"cardinality":1,"default_value":[]},{"name":"created","label":"Authored on","description":"The time that the node was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"changed","label":"Changed","description":"The time that the node was last edited.","field_type":"changed","is_required":false,"cardinality":1,"default_value":[]},{"name":"promote","label":"Promoted to front page","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"sticky","label":"Sticky at top of lists","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":false}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"default_langcode","label":"Default translation","description":"A flag indicating whether this is the default translation.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_default","label":"Default revision","description":"A flag indicating whether this was a default revision when it was saved.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_translation_affected","label":"Revision translation affected","description":"Indicates if the last edit of a translation belongs to current revision.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"path","label":"URL alias","description":null,"field_type":"path","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_address","label":"Address","description":null,"field_type":"address","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_adrc_resource_type","label":"Resource Type","description":null,"field_type":"entity_reference","is_required":true,"cardinality":1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":["adrc_resource_type"]}},{"name":"field_description","label":"Description","description":null,"field_type":"text_long","is_required":true,"cardinality":1,"default_value":[]},{"name":"field_email","label":"Email","description":null,"field_type":"email","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_file","label":"File","description":null,"field_type":"file","is_required":true,"cardinality":-1,"default_value":[]},{"name":"field_hours","label":"Hours","description":null,"field_type":"text_long","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_phone","label":"Phone","description":null,"field_type":"telephone","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_website","label":"Website","description":null,"field_type":"link","is_required":false,"cardinality":1,"default_value":[]}]},{"name":"adrc_category_resource","label":"ADRC Category Resource","fields":[{"name":"nid","label":"ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"uuid","label":"UUID","description":null,"field_type":"uuid","is_required":false,"cardinality":1,"default_value":[]},{"name":"vid","label":"Revision ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"langcode","label":"Language","description":null,"field_type":"language","is_required":false,"cardinality":1,"default_value":[]},{"name":"type","label":"Content type","description":null,"field_type":"entity_reference","is_required":true,"cardinality":1,"default_value":[],"settings":{"target_type":"node_type"}},{"name":"revision_timestamp","label":"Revision create time","description":"The time that the current revision was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"revision_uid","label":"Revision user","description":"The user ID of the author of the current revision.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"revision_log","label":"Revision log message","description":"Briefly describe the changes you have made.","field_type":"string_long","is_required":false,"cardinality":1,"default_value":[{"value":""}]},{"name":"status","label":"Published","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"uid","label":"Authored by","description":"The username of the content author.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"title","label":"Name","description":null,"field_type":"string","is_required":true,"cardinality":1,"default_value":[]},{"name":"created","label":"Authored on","description":"The time that the node was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"changed","label":"Changed","description":"The time that the node was last edited.","field_type":"changed","is_required":false,"cardinality":1,"default_value":[]},{"name":"promote","label":"Promoted to front page","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"sticky","label":"Sticky at top of lists","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":false}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"default_langcode","label":"Default translation","description":"A flag indicating whether this is the default translation.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_default","label":"Default revision","description":"A flag indicating whether this was a default revision when it was saved.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_translation_affected","label":"Revision translation affected","description":"Indicates if the last edit of a translation belongs to current revision.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"path","label":"URL alias","description":null,"field_type":"path","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_category_description","label":"Description","description":null,"field_type":"text_long","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_category_file","label":"File","description":null,"field_type":"file","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_link","label":"Link","description":null,"field_type":"link","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_adrc_service_area","label":"Geographical areas","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":[]}},{"name":"field_adrc_service_category","label":"Service category","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":["service_category"]}},{"name":"field_local_adrc","label":"Local ADRC","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"node","target_bundles":["adrc_category_resource"]}}]},{"name":"adrc_resource","label":"ADRC Resource","fields":[{"name":"nid","label":"ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"uuid","label":"UUID","description":null,"field_type":"uuid","is_required":false,"cardinality":1,"default_value":[]},{"name":"vid","label":"Revision ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"langcode","label":"Language","description":null,"field_type":"language","is_required":false,"cardinality":1,"default_value":[]},{"name":"type","label":"Content type","description":null,"field_type":"entity_reference","is_required":true,"cardinality":1,"default_value":[],"settings":{"target_type":"node_type"}},{"name":"revision_timestamp","label":"Revision create time","description":"The time that the current revision was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"revision_uid","label":"Revision user","description":"The user ID of the author of the current revision.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"revision_log","label":"Revision log message","description":"Briefly describe the changes you have made.","field_type":"string_long","is_required":false,"cardinality":1,"default_value":[{"value":""}]},{"name":"status","label":"Published","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"uid","label":"Authored by","description":"The username of the content author.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"title","label":"Service provider name","description":null,"field_type":"string","is_required":true,"cardinality":1,"default_value":[]},{"name":"created","label":"Authored on","description":"The time that the node was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"changed","label":"Changed","description":"The time that the node was last edited.","field_type":"changed","is_required":false,"cardinality":1,"default_value":[]},{"name":"promote","label":"Promoted to front page","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"sticky","label":"Sticky at top of lists","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":false}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"default_langcode","label":"Default translation","description":"A flag indicating whether this is the default translation.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_default","label":"Default revision","description":"A flag indicating whether this was a default revision when it was saved.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_translation_affected","label":"Revision translation affected","description":"Indicates if the last edit of a translation belongs to current revision.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"path","label":"URL alias","description":null,"field_type":"path","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_contact","label":"Contact","description":null,"field_type":"entity_reference_revisions","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_adrc_counties_served","label":"Counties Served","description":null,"field_type":"entity_reference","is_required":true,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":["adrc_counties"]}},{"name":"field_adrc_description","label":"Description","description":null,"field_type":"text_long","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_eligibility","label":"Eligibility","description":null,"field_type":"text_long","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_funding_source","label":"Funding source","description":null,"field_type":"list_string","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_service_area_detail","label":"Service Area Detail","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":["service_area"]}},{"name":"field_adrc_service_category","label":"Service category","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":["service_category"]}},{"name":"field_adrc_service_forms","label":"Service \u0026 forms","description":null,"field_type":"entity_reference_revisions","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_adrc_website","label":"Website","description":null,"field_type":"link","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_local_adrc","label":"Local ADRC","description":null,"field_type":"entity_reference","is_required":true,"cardinality":-1,"default_value":[],"settings":{"target_type":"node","target_bundles":["local_adrc"]}}]},{"name":"local_adrc","label":"Local ADRC","fields":[{"name":"nid","label":"ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"uuid","label":"UUID","description":null,"field_type":"uuid","is_required":false,"cardinality":1,"default_value":[]},{"name":"vid","label":"Revision ID","description":null,"field_type":"integer","is_required":false,"cardinality":1,"default_value":[]},{"name":"langcode","label":"Language","description":null,"field_type":"language","is_required":false,"cardinality":1,"default_value":[]},{"name":"type","label":"Content type","description":null,"field_type":"entity_reference","is_required":true,"cardinality":1,"default_value":[],"settings":{"target_type":"node_type"}},{"name":"revision_timestamp","label":"Revision create time","description":"The time that the current revision was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"revision_uid","label":"Revision user","description":"The user ID of the author of the current revision.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"revision_log","label":"Revision log message","description":"Briefly describe the changes you have made.","field_type":"string_long","is_required":false,"cardinality":1,"default_value":[{"value":""}]},{"name":"status","label":"Published","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"uid","label":"Authored by","description":"The username of the content author.","field_type":"entity_reference","is_required":false,"cardinality":1,"default_value":[],"settings":{"target_type":"user"}},{"name":"title","label":"Name","description":null,"field_type":"string","is_required":true,"cardinality":1,"default_value":[]},{"name":"created","label":"Authored on","description":"The time that the node was created.","field_type":"created","is_required":false,"cardinality":1,"default_value":[]},{"name":"changed","label":"Changed","description":"The time that the node was last edited.","field_type":"changed","is_required":false,"cardinality":1,"default_value":[]},{"name":"promote","label":"Promoted to front page","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":0}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"sticky","label":"Sticky at top of lists","description":null,"field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":false}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"default_langcode","label":"Default translation","description":"A flag indicating whether this is the default translation.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[{"value":true}],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_default","label":"Default revision","description":"A flag indicating whether this was a default revision when it was saved.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"revision_translation_affected","label":"Revision translation affected","description":"Indicates if the last edit of a translation belongs to current revision.","field_type":"boolean","is_required":false,"cardinality":1,"default_value":[],"settings":{"on_label":"On","off_label":"Off"}},{"name":"path","label":"URL alias","description":null,"field_type":"path","is_required":false,"cardinality":1,"default_value":[]},{"name":"field_adrc_contact","label":"Contact","description":null,"field_type":"entity_reference_revisions","is_required":false,"cardinality":-1,"default_value":[]},{"name":"field_adrc_service_area","label":"Service area","description":null,"field_type":"entity_reference","is_required":false,"cardinality":-1,"default_value":[],"settings":{"target_type":"taxonomy_term","target_bundles":[]}},{"name":"field_adrc_website","label":"Website","description":null,"field_type":"link","is_required":false,"cardinality":1,"default_value":[]}]}]}
+{
+  "content_types": [
+    {
+      "name": "adrc_asset",
+      "label": "Services and Forms",
+      "fields": [
+        {
+          "name": "nid",
+          "label": "ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "uuid",
+          "label": "UUID",
+          "description": null,
+          "field_type": "uuid",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "vid",
+          "label": "Revision ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "langcode",
+          "label": "Language",
+          "description": null,
+          "field_type": "language",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "type",
+          "label": "Content type",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node_type"
+          }
+        },
+        {
+          "name": "revision_timestamp",
+          "label": "Revision create time",
+          "description": "The time that the current revision was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "revision_uid",
+          "label": "Revision user",
+          "description": "The user ID of the author of the current revision.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "revision_log",
+          "label": "Revision log message",
+          "description": "Briefly describe the changes you have made.",
+          "field_type": "string_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "label": "Published",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "uid",
+          "label": "Authored by",
+          "description": "The username of the content author.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "description": null,
+          "field_type": "string",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "created",
+          "label": "Authored on",
+          "description": "The time that the node was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "changed",
+          "label": "Changed",
+          "description": "The time that the node was last edited.",
+          "field_type": "changed",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "promote",
+          "label": "Promoted to front page",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "sticky",
+          "label": "Sticky at top of lists",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": false
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "default_langcode",
+          "label": "Default translation",
+          "description": "A flag indicating whether this is the default translation.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_default",
+          "label": "Default revision",
+          "description": "A flag indicating whether this was a default revision when it was saved.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_translation_affected",
+          "label": "Revision translation affected",
+          "description": "Indicates if the last edit of a translation belongs to current revision.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "path",
+          "label": "URL alias",
+          "description": null,
+          "field_type": "path",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_address",
+          "label": "Address",
+          "description": null,
+          "field_type": "address",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_resource_type",
+          "label": "Resource Type",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": [
+              "adrc_resource_type"
+            ]
+          }
+        },
+        {
+          "name": "field_description",
+          "label": "Description",
+          "description": null,
+          "field_type": "text_long",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_email",
+          "label": "Email",
+          "description": null,
+          "field_type": "email",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_file",
+          "label": "File",
+          "description": null,
+          "field_type": "file",
+          "is_required": true,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_hours",
+          "label": "Hours",
+          "description": null,
+          "field_type": "text_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_phone",
+          "label": "Phone",
+          "description": null,
+          "field_type": "telephone",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_website",
+          "label": "Website",
+          "description": null,
+          "field_type": "link",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        }
+      ]
+    },
+    {
+      "name": "adrc_category_resource",
+      "label": "ADRC Category Resource",
+      "fields": [
+        {
+          "name": "nid",
+          "label": "ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "uuid",
+          "label": "UUID",
+          "description": null,
+          "field_type": "uuid",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "vid",
+          "label": "Revision ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "langcode",
+          "label": "Language",
+          "description": null,
+          "field_type": "language",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "type",
+          "label": "Content type",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node_type"
+          }
+        },
+        {
+          "name": "revision_timestamp",
+          "label": "Revision create time",
+          "description": "The time that the current revision was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "revision_uid",
+          "label": "Revision user",
+          "description": "The user ID of the author of the current revision.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "revision_log",
+          "label": "Revision log message",
+          "description": "Briefly describe the changes you have made.",
+          "field_type": "string_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "label": "Published",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "uid",
+          "label": "Authored by",
+          "description": "The username of the content author.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "title",
+          "label": "Name",
+          "description": null,
+          "field_type": "string",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "created",
+          "label": "Authored on",
+          "description": "The time that the node was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "changed",
+          "label": "Changed",
+          "description": "The time that the node was last edited.",
+          "field_type": "changed",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "promote",
+          "label": "Promoted to front page",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "sticky",
+          "label": "Sticky at top of lists",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": false
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "default_langcode",
+          "label": "Default translation",
+          "description": "A flag indicating whether this is the default translation.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_default",
+          "label": "Default revision",
+          "description": "A flag indicating whether this was a default revision when it was saved.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_translation_affected",
+          "label": "Revision translation affected",
+          "description": "Indicates if the last edit of a translation belongs to current revision.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "path",
+          "label": "URL alias",
+          "description": null,
+          "field_type": "path",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_category_description",
+          "label": "Description",
+          "description": null,
+          "field_type": "text_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_category_file",
+          "label": "File",
+          "description": null,
+          "field_type": "file",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_link",
+          "label": "Link",
+          "description": null,
+          "field_type": "link",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_service_area",
+          "label": "Geographical areas",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": []
+          }
+        },
+        {
+          "name": "field_adrc_service_category",
+          "label": "Service category",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": [
+              "service_category"
+            ]
+          }
+        },
+        {
+          "name": "field_local_adrc",
+          "label": "Local ADRC",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node",
+            "target_bundles": [
+              "adrc_category_resource"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "adrc_resource",
+      "label": "ADRC Resource",
+      "fields": [
+        {
+          "name": "nid",
+          "label": "ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "uuid",
+          "label": "UUID",
+          "description": null,
+          "field_type": "uuid",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "vid",
+          "label": "Revision ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "langcode",
+          "label": "Language",
+          "description": null,
+          "field_type": "language",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "type",
+          "label": "Content type",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node_type"
+          }
+        },
+        {
+          "name": "revision_timestamp",
+          "label": "Revision create time",
+          "description": "The time that the current revision was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "revision_uid",
+          "label": "Revision user",
+          "description": "The user ID of the author of the current revision.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "revision_log",
+          "label": "Revision log message",
+          "description": "Briefly describe the changes you have made.",
+          "field_type": "string_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "label": "Published",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "uid",
+          "label": "Authored by",
+          "description": "The username of the content author.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "title",
+          "label": "Service provider name",
+          "description": null,
+          "field_type": "string",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "created",
+          "label": "Authored on",
+          "description": "The time that the node was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "changed",
+          "label": "Changed",
+          "description": "The time that the node was last edited.",
+          "field_type": "changed",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "promote",
+          "label": "Promoted to front page",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "sticky",
+          "label": "Sticky at top of lists",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": false
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "default_langcode",
+          "label": "Default translation",
+          "description": "A flag indicating whether this is the default translation.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_default",
+          "label": "Default revision",
+          "description": "A flag indicating whether this was a default revision when it was saved.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_translation_affected",
+          "label": "Revision translation affected",
+          "description": "Indicates if the last edit of a translation belongs to current revision.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "path",
+          "label": "URL alias",
+          "description": null,
+          "field_type": "path",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_contact",
+          "label": "Contact",
+          "description": null,
+          "field_type": "entity_reference_revisions",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_counties_served",
+          "label": "Counties Served",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": [
+              "adrc_counties"
+            ]
+          }
+        },
+        {
+          "name": "field_adrc_description",
+          "label": "Description",
+          "description": null,
+          "field_type": "text_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_eligibility",
+          "label": "Eligibility",
+          "description": null,
+          "field_type": "text_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_funding_source",
+          "label": "Funding source",
+          "description": null,
+          "field_type": "list_string",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_service_area_detail",
+          "label": "Service Area Detail",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": [
+              "service_area"
+            ]
+          }
+        },
+        {
+          "name": "field_adrc_service_category",
+          "label": "Service category",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": [
+              "service_category"
+            ]
+          }
+        },
+        {
+          "name": "field_adrc_service_forms",
+          "label": "Service & forms",
+          "description": null,
+          "field_type": "entity_reference_revisions",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_website",
+          "label": "Website",
+          "description": null,
+          "field_type": "link",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_local_adrc",
+          "label": "Local ADRC",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node",
+            "target_bundles": [
+              "local_adrc"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "local_adrc",
+      "label": "Local ADRC",
+      "fields": [
+        {
+          "name": "nid",
+          "label": "ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "uuid",
+          "label": "UUID",
+          "description": null,
+          "field_type": "uuid",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "vid",
+          "label": "Revision ID",
+          "description": null,
+          "field_type": "integer",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "langcode",
+          "label": "Language",
+          "description": null,
+          "field_type": "language",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "type",
+          "label": "Content type",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "node_type"
+          }
+        },
+        {
+          "name": "revision_timestamp",
+          "label": "Revision create time",
+          "description": "The time that the current revision was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "revision_uid",
+          "label": "Revision user",
+          "description": "The user ID of the author of the current revision.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "revision_log",
+          "label": "Revision log message",
+          "description": "Briefly describe the changes you have made.",
+          "field_type": "string_long",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": ""
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "label": "Published",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "uid",
+          "label": "Authored by",
+          "description": "The username of the content author.",
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "target_type": "user"
+          }
+        },
+        {
+          "name": "title",
+          "label": "Name",
+          "description": null,
+          "field_type": "string",
+          "is_required": true,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "created",
+          "label": "Authored on",
+          "description": "The time that the node was created.",
+          "field_type": "created",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "changed",
+          "label": "Changed",
+          "description": "The time that the node was last edited.",
+          "field_type": "changed",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "promote",
+          "label": "Promoted to front page",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": 0
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "sticky",
+          "label": "Sticky at top of lists",
+          "description": null,
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": false
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "default_langcode",
+          "label": "Default translation",
+          "description": "A flag indicating whether this is the default translation.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [
+            {
+              "value": true
+            }
+          ],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_default",
+          "label": "Default revision",
+          "description": "A flag indicating whether this was a default revision when it was saved.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "revision_translation_affected",
+          "label": "Revision translation affected",
+          "description": "Indicates if the last edit of a translation belongs to current revision.",
+          "field_type": "boolean",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": [],
+          "settings": {
+            "on_label": "On",
+            "off_label": "Off"
+          }
+        },
+        {
+          "name": "path",
+          "label": "URL alias",
+          "description": null,
+          "field_type": "path",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_contact",
+          "label": "Contact",
+          "description": null,
+          "field_type": "entity_reference_revisions",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": []
+        },
+        {
+          "name": "field_adrc_service_area",
+          "label": "Service area",
+          "description": null,
+          "field_type": "entity_reference",
+          "is_required": false,
+          "cardinality": -1,
+          "default_value": [],
+          "settings": {
+            "target_type": "taxonomy_term",
+            "target_bundles": []
+          }
+        },
+        {
+          "name": "field_adrc_website",
+          "label": "Website",
+          "description": null,
+          "field_type": "link",
+          "is_required": false,
+          "cardinality": 1,
+          "default_value": []
+        }
+      ]
+    }
+  ]
+}
